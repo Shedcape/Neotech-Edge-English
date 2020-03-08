@@ -1,0 +1,1618 @@
+<div>
+	<!-- Set up the Tabs -->
+	<input type="radio" class="sheet-tab sheet-tab1" name="attr_core-tab" value="1" title="Basic Info" checked="checked"/> 
+	<span class="sheet-tab sheet-tab1" style='line-height: 40px;'>BASIC INFO</span>
+	<input type="radio" class="sheet-tab sheet-tab2" name="attr_core-tab" value="2" title="Hacking & TRiqs"/> 
+	<span class="sheet-tab sheet-tab2" style='line-height: 20px;'>HACKING & TRIQS</span>
+	<input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Eqip"/> 
+	<span class="sheet-tab sheet-tab3" style='line-height: 40px;'>EQIP</span>
+	<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Trauma"/> 
+	<span class="sheet-tab sheet-tab4" style='line-height: 40px;'>TRAUMA</span>
+	
+	<input type="checkbox" class="sheet-hideArcanum" name="attr_ArcanumTab" style="width: 15px; display: none;">
+	<input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Economy & DOWNTIME" /> 
+	<span class="sheet-tab sheet-tab5" style='line-height: 20px;'>ECONOMY & DOWNTIME</span>
+	
+	<input type="radio" class="sheet-tab sheet-tab6" name="attr_core-tab" value="6" title="All rolls on one page" /> 
+	<span class="sheet-tab sheet-tab6" style='line-height: 40px;'>ALL ROLLS</span>
+	<!-- End Tab setup -->
+
+<!--- Below this is the general page    --->
+    <div class="sheet-section-general">
+	    <div>
+	        <br>
+	        <div class="economypage">
+	            <h2 class="whitetext">Character information</h2>
+	        </div>
+	        <br>
+	        <div class="charactercontainer">
+	            <div class="nameage">
+	                <div class="flexname">
+                        <p><b>Name: </b><input class="stylepersonality" type="text" name="attr_charactername"/></p>
+                        <br>
+                    </div>
+                    <div class="flexname">
+                        <p><b>Styles: </b><input class="stylepersonality" type="text" name="attr_styles"/></p>
+                    </div>
+                    <div class="flexname">
+                        <p><b>Personality: </b><input class="stylepersonality" type="text" name="attr_personality"/></p>
+                    </div>
+                </div>
+                <div class="lifehealtsphere">
+                    <div class="flexname">
+                        <p><b>Age: </b><input class="agebox" type="number" name="attr_agename"/></p> 
+                    </div>
+                
+                    <div class="flexname">
+                        <p><b>Generation: </b>
+                            <select class="generation2" name="attr_generationselection">
+                                <option>Epsilon</option>
+                                <option>Auto</option>
+                                <option>Fucked</option>
+                                <option>Presplit</option>
+                            </select>
+                        </p>
+                    </div>    
+                    <div class="lifehealth">
+                        <p> <b>Sphere: </b>
+                            <select class="generation2" name="attr_sphere">
+                                <option>Amoks</option>
+                                <option>Anons</option>
+                                <option>Basare</option>
+                                <option>Boosters</option>
+                                <option>Nomads</option>
+                                <option>Nomo</option>
+                                <option>Norms</option>
+                                <option>Orbitals</option>
+                                <option>Primals</option>
+                                <option>Shapers</option>
+                                <option>Teos</option>
+                                <option>Taktikals</option>
+                            </select>
+                        </p>
+                    </div>                
+                    <div class="lifehealth">
+                        <p><b>Lifestyle: </b>
+                        <select class="generation2" name="attr_lifestyle">
+                            <option>Survivor</option>
+                            <option>Basic</option>
+                            <option>Pro</option>
+                            <option>Platinum</option>
+                        </select></p>
+                    </div>
+                    <div class="lifehealth">
+                        <p><b>Insurance: </b>
+                            <select class="generation2" name="attr_healthinsurance">
+                                <option>None</option>
+                                <option>Basic</option>
+                                <option>Pro</option>
+                                <option>Platinum</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="2colrow">
+                <div class="col">
+                    <p><b>Jenkem </b></p>
+                    <textarea class="jenkem" rows="4" cols="50" name="attr_jenkem"></textarea>
+                </div>
+                <div class="col">
+                    <p><b>Description: </b> </p>
+                    <textarea class="jenkem" rows="4" cols="50" name="attr_description"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="3colrow">
+                <div class="col">
+                    <h4 class="whitetext">Combat</h4>
+                    <p>Initiative: 
+                        <input class="combattext" type="number" name="attr_initiative"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{initiative} + ?{Modifier|0} + @{rollmodifier}" name="roll_initiative"></button> 
+                    </p>
+                    <p>Melee attack: 
+                        <input class="combattext" type="number" name="attr_melee-attack"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{melee-attack} + ?{Modifier|0} + @{rollmodifier}" name="roll_melee"></button> 
+                    </p>
+                    <p>Ranged attack: 
+                        <input class="combattext" type="number" name="attr_ranged-attack"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{ranged-attack} + ?{Modifier|0} + @{rollmodifier}" name="roll_ranged"></button> 
+                    </p>
+                    <p>Melee defense: 
+                        <input class="combattext" type="number" name="attr_melee-defense"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{melee-defense} + ?{Modifier|0} + @{rollmodifier}" name="roll_melee-defense"></button> 
+                    </p>
+                    <p>Ranged defense: 
+                        <input class="combattext" type="number" name="attr_ranged-defense"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{ranged-defense} + ?{Modifier|0} + @{rollmodifier}" name="roll_ranged-defense"></button> 
+                    </p>
+                    <p>Adrenaline: 
+                        <input class="combattext" type="number" name="attr_shock"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{shock} + ?{Modifier|0}" name="roll_shock"></button> 
+                    </p>
+                    <br>
+                    <h4 class="whitetext">Misc</h4>
+                    <p class="misc">Tripp: 
+                        <input class="combattext" type="number" name="attr_tripp"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{tripp} + ?{Modifier|0}" name="roll_tripp"></button>
+                    </p>
+                    <p class="misc">Status: 
+                        <input class="combattext" type="number" name="attr_status"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{status} + ?{Modifier|0}" name="roll_status"></button>
+                    </p>
+                    <p class="misc">Nätvaro: 
+                        <input class="combattext" type="number" name="attr_nätvaro"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{nätvaro} + ?{Modifier|0}" name="roll_nätvaro"></button>
+                    </p>
+                    <p class="misc">Sens: 
+                        <input class="combattext" type="number" name="attr_sens"/>
+                    </p>
+                    <br>
+                </div>
+                <div class="col">
+                    <h4 class="whitetext">Flow</h4>
+                    <p>Flow: 
+                        <input class="flowbox" type="number" name="attr_flow" value="12" />
+                    </p>
+                    <p>Used: 
+                        <input class="flowbox" type="number" name="attr_used-flow" value="0"/>
+                    </p>
+                    <p>Stress: 
+                        <input class="flowbox" type="number" name="attr_stress" value="0"/>
+                    </p>
+                    <p>Desens: 
+                        <input class="flowbox" type="number" name="attr_desens" value="0"/>
+                    </p>
+                    <br>
+                    <p>Sign: 
+                        <input class="flowbox" type="number" name="attr_sign" value="0"/>
+                    </p>
+                    <br>
+                    <p>Global roll modifier <!--- This modifies all rolls except adrenaline. Useful for modifiers that affects a lot of rolls and last a long time, such as pain from shock.  --->
+                        <input type="number" name="attr_rollmodifier" value="0"/>
+                    </p>
+                </div>
+                <div class="col">
+                    <h4 class="whitetext">Attributes</h4>
+                    <p class="attribute2">Flex: 
+                        <input class="attribute" type="number" name="attr_flex"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{flex} + ?{Modifier|0} + @{rollmodifier}" name="roll_flex"></button>
+                    </p>
+                    <p class="attribute2">Sync: 
+                        <input class="attribute" type="number" name="attr_sync"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{sync} + ?{Modifier|0} + @{rollmodifier}" name="roll_sync"></button>
+                    </p>
+                    <p class="attribute2">Primal: 
+                        <input class="attribute" type="number" name="attr_primal"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{primal} + ?{Modifier|0} + @{rollmodifier}" name="roll_primal"></button>
+                    </p>
+                    <p class="attribute2">Avantgarde: 
+                        <input class="attribute" type="number" name="attr_avantgarde"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{avantgarde} + ?{Modifier|0} + @{rollmodifier}" name="roll_avantgarde"></button>
+                    </p>
+                    <p class="attribute2">Charisma: 
+                        <input class="attribute" type="number" name="attr_charisma"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{charisma} + ?{Modifier|0} + @{rollmodifier}" name="roll_charisma"></button>
+                    </p>
+                    <p class="attribute2">Instinct: 
+                        <input class="attribute" type="number" name="attr_instinct"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{instinct} + ?{Modifier|0} + @{rollmodifier}" name="instinct"></button>
+                    </p>
+                    <p class="attribute2">Cortex: 
+                        <input class="attribute" type="number" name="attr_cortex"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{cortex} + ?{Modifier|0} + @{rollmodifier}" name="cortex"></button>
+                    </p>
+                    <p class="attribute2">Tech: 
+                        <input class="attribute" type="number" name="attr_tech"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{tech} + ?{Modifier|0} + @{rollmodifier}" name="tech"></button>
+                    </p>
+                    <p class="attribute2">System: 
+                        <input class="attribute" type="number" name="attr_system"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{system} + ?{Modifier|0} + @{rollmodifier}" name="system"></button>
+                    </p>
+                    <p class="attribute2">Hardcore: 
+                        <input class="attribute" type="number" name="attr_hardcore"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{hardcore} + ?{Modifier|0} + @{rollmodifier}" name="hardcore"></button>
+                    </p>
+                </div>
+            </div>
+	    </div>
+        <div>
+            <span>Hide Edges & Networks</span>
+            <input class="sheet-hidenetworks" type="checkbox"/>
+            <br>
+            <div class="sheet-networks 2colrow">
+                <div class="sheet-networks col">
+                    <br>
+                    <h4 class="whitetext">Edges</h4>
+                        <fieldset class="repeating_edges"> 
+                            <p><input class="edgebox" type="text" name="attr_edgename" placeholder="Edge name"/> 
+                            <span>Level: <input type="number" name="attr_edgelevel"/></span> 
+                            <span>Layer: <input type="number" name="attr_edgelayer"/></span>
+                            </p>
+                        </fieldset>
+                </div>
+                <div class="sheet-networks col">
+                    <br>
+                    <div class="tripflexcontainer">
+                        <div class="trip1">
+                            <h4 class="whitetext">Desire</h4>
+                        </div>
+                        <div class="trip2">
+                            <h4 class="whitetext">Trips</h4>
+                        </div>
+                        <div class="trip3">
+                            <h4 class="whitetext">Status</h4>
+                        </div>
+                    </div>
+                    <div class="tripflexcontainer2">
+                        <fieldset class="repeating_desires">
+                            <input class="trip1" type="text" name="attr_desire1" placeholder="Desire name"/>
+                            <input class="trip2" type="text" name="attr_tripname"/>
+                            <select class="trip3" name="attr_tripstatus">
+                                <option>New</option>
+                                <option>Used</option>
+                                <option>Worn</option>
+                                <option>Burnt out</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+	        <div class="sheet-networks row">
+                <h3 class="economypage whitetext">Networks</h3>
+            </div>
+            <div class="sheet-networks flexcontainer3">
+                <div class="networkheadline"><h4 class="whitetext">Network</h4></div>
+                <div class="networkheadline"><h4 class="whitetext">Contact</h4></div>
+                <div class="networkheadline"><h4 class="whitetext">Domain</h4></div>
+                <div class="networkheadline"><h4 class="whitetext">Level</h4></div>
+                <div class="networkheadline"><h4 class="whitetext">Status</h4></div>
+            </div>
+            <div class="sheet-networks">
+                <div class="sheet-networks row">
+                    <fieldset class="repeating_network">
+                        <input class="network" type="text" name="attr_networkname"/>
+                        <input class="network" type="text" name="attr_contactname"/>
+                        <input class="network" type="text" name="attr_domainname"/>
+                        <select class="network2" name="attr_networklevel">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>                    
+                        <select class="network2" name="attr_contactstatus">
+                            <option>OK</option>
+                            <option>Used</option>
+                            <option>Abused</option>
+                        </select>       
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br>
+            <span>Hide CV & Youth: </span> 
+            <input class="sheet-showcv" type="checkbox"/>
+            <br>
+	        <div class="sheet-cv row">
+	            <h4 class="whitetext">CV</h4>
+                    <fieldset class="repeating_contract">
+                        <p><input class="edgebox" type="text" name="attr_contractname" placeholder="Contract"/></p>
+                        <p><textarea class="experience" name="attr_contractexperience" placeholder="Contract experience goes here"></textarea></p>
+                    </fieldset>
+	        </div>
+	        <br>
+	        <div class="sheet-cv row">
+	            <h4 class="whitetext">Youth</h4>
+                    <p> Youth economic level: 
+                        <select class="generation" name="attr_youthlevel">
+                            <option>Shacker</option>
+                            <option>Wageslave</option>
+                            <option>Pro</option>
+                            <option>Paladin</option>
+                        </select></p>
+                    <textarea class="experience" name="attr_youthexperience" placeholder="Youth experience goes here"></textarea>
+	        </div>
+	    </div>
+    </div>
+<!--- Below this is the edge and triq page --->
+    <div class="sheet-section-edge">
+        <br>
+        <!---
+	    <div class="sheet-networks row">
+            <h3 class="economypage">Networks</h3>
+        </div>
+        <div class="sheet-networks flexcontainer3">
+            <div class="networkheadline"><h4>Network</h4></div>
+            <div class="networkheadline"><h4>Contact</h4></div>
+            <div class="networkheadline"><h4>Domain</h4></div>
+            <div class="networkheadline"><h4>Level</h4></div>
+            <div class="networkheadline"><h4>Status</h4></div>
+        </div>
+        <div class="sheet-networks">
+            <div class="sheet-networks row">
+                <fieldset class="repeating_network">
+                    <input class="network" type="text" name="attr_networkname"/>
+                    <input class="network" type="text" name="attr_contactname"/>
+                    <input class="network" type="text" name="attr_domainname"/>
+                    <select class="network2" name="attr_networklevel">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>                    
+                    <select class="network2" name="attr_contactstatus">
+                        <option>OK</option>
+                        <option>Used</option>
+                        <option>Abused</option>
+                    </select>       
+                </fieldset>
+            </div>
+        </div>
+	    <div class="2colrow">
+            <div class="col">
+                <br>
+                <h4>Edges</h4>
+                    <fieldset class="repeating_edges"> 
+                        <p><input class="edgebox" type="text" name="attr_edgename" placeholder="Edge name"/> 
+                        <span>Level: <input type="number" name="attr_edgelevel"/></span> 
+                        <span>Layer: <input type="number" name="attr_edgelayer"/></span>
+                        </p>
+                    </fieldset>
+            </div>
+            <div class="col">
+                <br>
+                <div class="tripflexcontainer">
+                    <div class="trip1">
+                        <h4>Desire</h4>
+                    </div>
+                    <div class="trip2">
+                        <h4>Trips</h4>
+                    </div>
+                    <div class="trip3">
+                        <h4>Status</h4>
+                    </div>
+                </div>
+                <div class="tripflexcontainer2">
+                    <fieldset class="repeating_desires">
+                        <input class="trip1" type="text" name="attr_desire1" placeholder="Desire name"/>
+                        <input class="trip2" type="text" name="attr_tripname"/>
+                        <select class="trip3" name="attr_tripstatus">
+                            <option>New</option>
+                            <option>Used</option>
+                            <option>Worn</option>
+                            <option>Burnt out</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        --->
+        <div class="row">
+            <br>
+            <span>Idgaf about hacking</span>
+            <input class="sheet-hidehacking" type="checkbox"/>
+            <div class="nohacking">
+                <h4 class="whitetext">Hacking</h4>
+                <p><b>Personal stack: </b>
+                    <input type="number" class="personalstack" name="attr_personalstack"/>
+                    <span><b>Private IS</b>
+                        <input type="number" class="privateis" name="attr_privateis"/>
+                        <button type="roll" class="privateisbutton" name="roll_privateis" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{privateis} + ?{Modifier|0} + @{rollmodifier}"/>
+                    </span>
+                    <span><b>Leech stack</b>
+                        <input type="number" class="privateis" name="attr_leechstack"/>
+                        <button type="roll" class="leechstackbutton" name="roll_leech" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{cortex} + ?{Modifier|0} + @{rollmodifier}"/>
+                    </span>
+                    <span><b>Tulpa: </b>
+                        <select class="hacklevel" name="attr_tulpalevel">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </span>
+                </p>
+                <h5 class="whitetext">Sploits/Daemons</h5>
+                    <fieldset class="repeating_hacking">
+                        <p>
+                            <input class="hackname" type="text" name="attr_hackname" placeholder="Sploit/daemon name"/>
+                            <span>Level: 
+                                <select class="hacklevel" name="attr_hacklevel">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </span>
+                            <span>#0D
+                                <input type="checkbox" class="zeroday" name="attr_zeroday"/>
+                            </span>
+                            <span>Type:
+                                <input type="text" class="hacktype" name="attr_hacktype" placeholder="Sploit/daemon type"/>
+                            </span>
+                            <span>Cost: 
+                                <input type="number" class="hackcost" name="attr_hackcost"/>
+                            </span>
+                            <span>
+                                <input type="text" class="triqdesc" name="attr_hackdesc" placeholder="Sploit/daemon description"/>
+                            </span>
+                        </p>
+                    </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <h4 class="whitetext">Triqs</h4>
+                <fieldset class="repeating_triqs"> 
+                <p><input class="triqname" type="text" name="attr_triqname" placeholder="Triq name"/> 
+                <span>Cost: <input class="triqcost" type="text" name="attr_triqcost"/></span>
+                <span>Edge: <input class="triqedge" type="text" name="attr_triqedge"/></span> </p>
+                <textarea class="triqdesc" type="text" name="attr_triqdesc" placeholder="Triq description"></textarea>
+                </fieldset>
+        </div>
+    </div>
+<!--- Below this is the eqip and weapons page --->
+    <div class="sheet-section-eqip">
+        <div>
+            <div class="row">
+                <br>
+                <h3 class="whitetext">Weapons</h3>
+                    <fieldset class="repeating_weapons">
+                        <div class="repeating-weapons">
+                            <p>
+                                <input class="weaponname" type="text" name="attr_weapon-name" placeholder="Weapon name"/>
+                                <span> Attack: 
+                                    <input class="ammo" type="number" name="attr_charattack"/>
+                                    <button type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{charattack} + ?{Modifier|0} + @{rollmodifier}" name="roll_repeatingdamage"></button> 
+                                </span>
+                                <span> Auto: 
+                                    <input class="ammo" type="number" name="attr_weapon-auto"/>
+                                </span> 
+                                <span>Damage: 
+                                    <input class="textbox" type="text" name="attr_weapon-damage"/>
+                                    <button type="roll" value="/roll @{weapon-damage} + ?{Modifier|0}" name="roll_repeatingdamage"></button>
+                                </span>
+                                <span> Penetration: 
+                                    <input class="ammo" type="number" name="attr_weapon-pen"/>
+                                </span>
+                            </p>
+                            <p>Ammo: 
+                                <input class="ammo" type="number" name="attr_weapon-ammo"/>
+                                <span>/ <input class="ammo" type="number" name="attr_weapon-ammototal"/></span>
+                                <span> Carried: <input class="ammo" type="number" name="attr_weaponloaded"/></span>
+                                <span> Owned: <input class="ammo" type="number" name="attr_weaponcarried"/></span>
+                                <span> Calibre: <input class="textbox" type="text" name="attr_weapon-calibre"/></span>
+                                <span> Quality: <input class="textbox" type="text" name="attr_weapon-quality"/></span>
+                                <span> Sign: <input class="ammo" type="number" name="attr_weapon-sign"/></span>
+                            </p>
+                            <p>
+                                <input class="weaponpropertybox" type="text" name="attr_weapon-property" placeholder="Weapon properties"/>
+                            </p>
+                        </div>
+                    </fieldset>
+            </div>
+            <div class="row">
+                <br>
+                <h3 class="whitetext">Eqip</h3>
+                <fieldset class="repeating_eqip">
+                    <div class="repeating-weapons">
+                        <p>
+                            <input class="weaponname" type="text" name="attr_eqip-name" placeholder="Eqip name"/> 
+                            <span>Auto: <input class="attribute2" type="number" name="attr_eqip-auto"/></span>
+                            <span>Sign: <input class="attribute2" type="number" name="attr_eqip-sign"/></span>
+                            <span> Quality: <input class="textbox" type="text" name="attr_eqip-quality"/>  
+                            <span><input class="eqipproperty" type="text" name="attr_eqip-property" placeholder="Properties"/></span>
+                        </p>
+                        <br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row">
+                <br>
+                <h3 class="whitetext">Augments</h3>
+                <fieldset class="repeating_augment">
+                    <div class="repeating-weapons">
+                        <p>
+                            <input class="weaponname" type="text" name="attr_aug-name" placeholder="Augment name"/>
+                            <span> Slot: <input class="textbox" type="text" name="attr_aug-slot"/></span> 
+                            <span>Auto: <input class="attribute2" type="number" name="attr_aug-auto"/></span>
+                            <span>Sign: <input class="attribute2" type="number" name="attr_augsign"/></span>
+                            <span> Quality: <input class="textbox" type="text" name="attr_aug-quality"/></span>  
+                            <span><input class="eqipproperty" type="text" name="attr_aug-property" placeholder="Augment properties"/></span>
+                        </p>
+                        <br>
+                    </div>
+                </fieldset>
+                <br>
+            </div>
+        </div>
+    </div>
+<!--- Below this is the trauma page --->
+    <div class="sheet-section-trauma">
+        <br>
+        <h1 class="traumacard whitetext">Trauma card</h1>
+        <br>
+        <div>
+            <p><b>Complication:</b>
+                <select class="complication" name="complication">
+                    <option>None</option>
+                    <option>12h</option>
+                    <option>1h</option>
+                    <option>10min</option>
+                    <option>1r</option>
+                </select>
+            </p>
+            <!---
+            <p><b>Shock: </b>
+                <select class="complication" name="shocklevel">
+                    <option>None</option>
+                    <option>Mild</option>
+                    <option>Severe</option>
+                    <option>Critical</option>
+                    <option>Death</option>
+                </select>
+                <span> <b>DC: </b><input class="attribute2" type="number" name="shockdifficulty" value="20"/></span>
+                <button class="traumashockbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{shock} + ?{Modifier|0}" name="roll_shock2"></button>
+                <span><b> Neuro: </b></span>
+                <select class="complication" name="neurolevel">
+                    <option>None</option>
+                    <option>Pain <span class="injurytext">(-4)</span></option>
+                    <option>Fucked up <span class="injurytext">(init = 0)</span></option>
+                    <option>Knocked out <span class="injurytext">(Can not act)</span></option>
+                    <option>Melted <span class="injurytext">(brain damage)</span></option>
+                </select>
+            </p>
+            --->
+        </div>
+        <div>
+            <div class="flexcontainer">
+                <div class="shockheader">
+                    <h4 class="whitetext">Shock</h4>
+                    <span> <b>DC: </b><input class="attribute2" type="number" name="shockdifficulty" value="20"/></span>
+                    <button class="traumashockbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{shock} + ?{Modifier|0}" name="roll_shock2"></button>
+                </div>
+                <div class="neuroheader">
+                    <br>
+                    <h4 class="whitetext">Neuro</h4>
+                </div>
+            </div>
+            <div class="divTable">
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        <div class="divTableCell">Mild</div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                        <div class="divTableCell"><p>Pain <span class="injurytext">(-4)</span></p></div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">Severe</div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                        <div class="divTableCell"><p>Fucked up <span class="injurytext">(init = 0)</span></p></div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">Critical</div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                        <div class="divTableCell"><p>Knocked out <span class="injurytext">(Can not act)</span></p></div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">Death</div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                        <div class="divTableCell"><p>Melted <span class="injurytext">(brain damage)</span></p></div>
+                        <div class="divTableCell"><input class="neuro" type="checkbox" value="0"</><span></span></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class = "2colrow">
+            <div class="col">
+                <div>
+                    <h2 class="whitetext">Head 
+                        <span class="augmenthead"> A: 
+                            <input class="augment3" type='checkbox' name='attr_headaugment' value='1'/>
+                        </span>
+                    </h2>
+                    <p>Protection: <input class="attribute2" type="number" name="attr_prothead"/></p>
+                    <p>1-3: 
+                        <span class="injurytext faceinjury">Face injury.</span> 
+                        <span class="injurytextproperty faceinjury"> #12h </span>
+                        <span class="injurytext4 faceinjury"> W: <input class="injury1 fi1" type='checkbox' name='attr_faceinjury' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_faceinjury2' value='1'/></span>
+                    </p>
+                    <p>16: 
+                        <span class="injurytext"> Crushed ear/nose.  </span>
+                        <span class="injurytextproperty"> #1h #NotBonga </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_earaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_crushedear' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_crushedear2' value='1'/></span>
+                    </p>
+                    <p>20: 
+                        <span class="injurytext">Ample bleeding.  </span>
+                        <span class="injurytextproperty"> #1h #NotBonga +2 shock </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_facebleeding' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_facebleeding2' value='1'/></span>
+                    </p>
+                    <p>23: 
+                        <span class="injurytext">Skull fracture.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup +2 shock </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_skullfracture' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_skullfracture2' value='1'/></span>
+                    </p>
+                    <p>27: 
+                        <span class="injurytext">Jaw trauma.  </span>
+                        <span class="injurytextproperty"> #1h #Pain #NotBonga #OMG	 </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_jawaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_jawtrauma' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_jawtrauma2' value='1'/></span>
+                    </p>
+                    <p>29: 
+                        <span class="injurytext">Destroyed left eye.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup #NotBonga +2 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_eyeaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_ldestroyedeye' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_ldestroyedeye2' value='1'/></span>
+                    </p>
+                    <p>29: 
+                        <span class="injurytext">Destroyed right eye.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup #NotBonga +2 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_reyeaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rdestroyedeye' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rdestroyedeye2' value='1'/></span>
+                    </p>
+                    <p>35: 
+                        <span class="injurytext">Trachea.  </span>
+                        <span class="injurytextproperty"> #10min #Fuckedup #OMG +4 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_tracheaaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_trachea' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_trachea2' value='1'/></span>
+                    </p>
+                    <p>38: 
+                        <span class="injurytext">Brain bleeding.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup #Lethal +4 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_brainaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_brain' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_brain2' value='1'/></span>
+                    </p>
+                    <p>42: 
+                        <span class="injurytext">Throat bleeding.  </span>
+                        <span class="injurytextproperty"> #1r #Fuckedup #OMG +4 shock </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_throat' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_throat2' value='1'/></span>
+                    </p>
+                    <p>48: 
+                        <span class="injurytext">Broken neck.  </span>
+                        <span class="injurytextproperty"> #1h #Knockedout #Lethal #Handicapped +4 shock </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_brokenneck' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_brokenneck2' value='1'/></span>
+                    </p>
+                    <p>52: 
+                        <span class="injurytext">Brain trauma.  </span>
+                        <span class="injurytextproperty"> ##10min #Melted #Lethal +8 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_brainaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_braintrauma' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_braintrauma2' value='1'/></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <h2 class="whitetext">Torso
+                        <span class="augmenthead"> A: <input class="augment3" type='checkbox' name='attr_torsoaugment' value='1'/></span>
+                    </h2>
+                    <p>Protection: <input class="attribute2" type="number" name="attr_prottorso"/></p>
+                    <p>4-5: 
+                        <span class="injurytext">Wound. </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_torsowound' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_torsowound2' value='1'/></span>
+                    </p>
+                    <p>14-15: 
+                        <span class="injurytext"> Genitalia.  </span>
+                        <span class="injurytextproperty"> #12h #Pain	 </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_genitalia' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_genitalia2' value='1'/></span>
+                    </p>
+                    <p>17: 
+                        <span class="injurytext"> Broken rib.  </span>
+                        <span class="injurytextproperty"> #12h #Pain </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_brokenrib' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_brokenrib2' value='1'/></span>
+                    </p>
+                    <p>24: 
+                        <span class="injurytext"> Abdomen pain.  </span>
+                        <span class="injurytextproperty"> #1h #Pain +2 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_abdomenaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_abdomen' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_abdomen2' value='1'/></span>
+                    </p>
+                    <p>28: 
+                        <span class="injurytext"> Pulmonary hit.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup +4 shock </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_pulmonary' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_pulmonary2' value='1'/></span>
+                    </p>
+                    <p>32: 
+                        <span class="injurytext"> Crotch.  </span>
+                        <span class="injurytextproperty"> #10min #Pain #OMG +2 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_crotchaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_crotch' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_crotch2' value='1'/></span>
+                    </p>
+                    <p>36-37: 
+                        <span class="injurytext"> Punctured lung.  </span>
+                        <span class="injurytextproperty"> #10min #Fuckedup +4 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_lungaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_puncturedlung' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_puncturedlung2' value='1'/></span>
+                    </p>
+                    <p>41: 
+                        <span class="injurytext"> Spine.  </span>
+                        <span class="injurytextproperty"> #1h #Fuckedup #Handicapped +4 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_spineaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_spine' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_spine2' value='1'/></span>
+                    </p>
+                    <p>47: 
+                        <span class="injurytext"> Heavy bleeding.  </span>
+                        <span class="injurytextproperty"> #1r #Fuckedup #Lethal +4 shock </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_torsoheavy' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_torsoheavy2' value='1'/></span>
+                    </p>
+                    <p>49-50: 
+                        <span class="injurytext"> Multiple organ.</span>
+                        <span class="injurytextproperty"> #10min #Pain #OMG +6 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_organaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_multipleorgan' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_multipleorgan2' value='1'/></span>
+                    </p>
+                    <p>51: 
+                        <span class="injurytext"> Heart.  </span> 
+                        <span class="injurytextproperty"> #1r #Knockedout #Lethal +8 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_heartaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_torsoheart' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_torsoheart2' value='1'/></span>
+                    </p>
+                    <p class="dontask">Don't ask why this text is here</p><!--- This is here to make sure that the sections for Legs and Arms line up properly. a <br> causes them to be misaligned a tad, and I don't know how to fix it in CSS --->
+                </div>                
+            </div>
+        </div>
+        <div class = "2colrow">
+            <div class = "col">
+                <div>
+                    <h2 class="whitetext">Arms
+                        <span class="augmenthead"> Left arm A: <input class="augment3" type='checkbox' name='attr_armaugment' value='1'/></span>
+                        <span class="augmenthead"> Right arm A: <input class="augment3" type='checkbox' name='attr_rarmaugment' value='1'/></span>
+                    </h2>
+                    <p>Protection left arm: <input class="attribute2" type="number" name="attr_protarml"/>
+                        <span> right arm: <input class="attribute2" type="number" name="attr_protarmr"/></span>
+                    </p>
+                    <p>6-7: 
+                        <span class="injurytext">Wound left arm.</span> 
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmswound' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmswound2' value='1'/></span>
+                    </p>
+                    <p>6-7: 
+                        <span class="injurytext"> Wound right arm.  </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmswound' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmswound2' value='1'/></span>
+                    </p>
+                    <p>10-11: 
+                        <span class="injurytext">Skin/muscle left arm.</span> 
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmskin' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmskin2' value='1'/></span>
+                    </p>
+                    <p>10-11: 
+                        <span class="injurytext"> Skin/muscle right arm.  </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmskin' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmskin2' value='1'/></span>
+                    </p>
+                    <p>18-19: 
+                        <span class="injurytext">Nerve damage left arm.  </span>
+                        <span class="injurytextproperty"> #12h #Pain #Handicapped </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmnerve' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmnerve2' value='1'/></span>
+                    </p>
+                    <p>18-19: 
+                        <span class="injurytext">Nerve damage right arm.  </span>
+                        <span class="injurytextproperty"> #12h #Pain #Handicapped </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmnerve' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmnerve2' value='1'/></span>
+                    </p>
+                    <p>25-26: 
+                        <span class="injurytext">Fracture left arm.  </span>
+                        <span class="injurytextproperty"> #1h #Pain #Handicapped	 </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmfracture' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmfracture2' value='1'/></span>
+                    </p>
+                    <p>25-26: 
+                        <span class="injurytext">Fracture right arm. </span>
+                        <span class="injurytextproperty"> #1h #Pain #Handicapped </span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmfracture' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmfracture2' value='1'/></span>
+                    </p>
+                    <p>33-34: 
+                        <span class="injurytext">Heavy bleeding left arm.  </span>
+                        <span class="injurytextproperty"> #1r +2 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_bleedingaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmbleeding' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmbleeding2' value='1'/></span>
+                    </p>
+                    <p>33-34: 
+                        <span class="injurytext">Heavy bleeding right arm.  </span>
+                        <span class="injurytextproperty"> #1r +2 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_rbleedingaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmbleeding' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmbleeding2' value='1'/></span>
+                    </p>
+                    <p>43-44: 
+                        <span class="injurytext">Mutilated left arm.  </span>
+                        <span class="injurytextproperty"> #1r #Fubar #OMG +4 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_mutilatedaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_larmmutilate' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_larmmutilate2' value='1'/></span>
+                    </p>
+                    <p>43-44: 
+                        <span class="injurytext">Mutilated right arm.  </span>
+                        <span class="injurytextproperty"> #1r #Fubar #OMG +4 shock </span>
+                        <span class="augment"> A: <input class="augment5" type='checkbox' name='attr_rmutilatedaugment' value='1'/></span>
+                        <span class="injurytext4"> W: <input class="injury1" type='checkbox' name='attr_rarmmutilate' value='1'/></span>
+                        <span class="injurytext5"> BH: <input class="injury2" type='checkbox' name='attr_rarmmutilate2' value='1'/></span>
+                    </p>
+                </div> 
+            </div>
+            <div class = "col">
+                <div>
+                    <h2 class="whitetext">Legs
+                        <span class="augmenthead"> Left leg A: <input class="augment3" type='checkbox' name='attr_llegaugment' value='1'/></span>
+                        <span class="augmenthead"> Right leg A: <input class="augment3" type='checkbox' name='attr_llegaugment' value='1'/></span>
+                    </h2>
+                    <p>Protection left leg: <input class="attribute2" type="number" name="attr_protlegsl"/>
+                        <span> right leg: <input class="attribute2" type="number" name="attr_protlegsr"/></span>
+                    </p>
+                    <p>8-9: 
+                        <span class="injurytext">Wound left leg.  </span>
+                        <span class="injurytextproperty"> #12h	</span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegwound' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegwound2' value='1'/></span>
+                    </p>
+                    <p>8-9: 
+                        <span class="injurytext"> Wound right leg.  </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegwound' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegwound2' value='1'/></span>
+                    </p>
+                    <p>12-13: 
+                        <span class="injurytext"> Skin/muscle left leg.  </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegskin' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegskin2' value='1'/></span>
+                    </p>
+                    <p>12-13: 
+                        <span class="injurytext"> Skin/muscle right leg.  </span>
+                        <span class="injurytextproperty"> #12h </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegskin' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegskin2' value='1'/></span>
+                    </p>
+                    <p>21-22: 
+                        <span class="injurytext"> Nerve damage left leg.  </span>
+                        <span class="injurytextproperty"> #12h #Pain #Handicapped	 </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegnerve' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegnerve2' value='1'/></span>
+                    </p>
+                    <p>21-22: 
+                        <span class="injurytext"> Nerve damage right leg.  </span>
+                        <span class="injurytextproperty"> #12h #Pain #Handicapped </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegnerve' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegnerve2' value='1'/></span>
+                    </p>
+                    <p>30-31: 
+                        <span class="injurytext"> Bone fracture left leg.  </span>
+                        <span class="injurytextproperty"> #10min #Pain #Handicapped +2 shock </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegfracture' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegfracture2' value='1'/></span>
+                    </p>
+                    <p>30-31: 
+                        <span class="injurytext"> Bone fracture right leg.  </span>
+                        <span class="injurytextproperty"> #10min #Pain #Handicapped +2 shock </span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegfracture' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegfracture2' value='1'/></span>
+                    </p>
+                    <p>39-40: 
+                        <span class="injurytext"> Heavy bleeding left leg.  </span>
+                        <span class="injurytextproperty"> #1r +2 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_legheavyaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegbleeding' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegbleeding2' value='1'/></span>
+                    </p>
+                    <p>39-40: 
+                        <span class="injurytext"> Heavy bleeding right leg.  </span>
+                        <span class="injurytextproperty"> #1r +2 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_rlegheavyaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegbleeding' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegbleeding2' value='1'/></span>
+                    </p>
+                    <p>45-46: 
+                        <span class="injurytext"> Mutilated left leg.  </span> 
+                        <span class="injurytextproperty"> #1r #Fubar #OMG +4 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_legmutaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_llegmutilate' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_llegmutilate2' value='1'/></span>
+                    </p>
+                    <p>45-46: 
+                        <span class="injurytext"> Mutilated right leg.  </span>
+                        <span class="injurytextproperty"> #1r #Fubar #OMG +4 shock </span>
+                        <span class="augment2"> A: <input class="augment5" type='checkbox' name='attr_rlegmutaugment' value='1'/></span>
+                        <span class="injurytext2"> W: <input class="injury1" type='checkbox' name='attr_rlegmutilate' value='1'/></span>
+                        <span class="injurytext3"> BH: <input class="injury2" type='checkbox' name='attr_rlegmutilate2' value='1'/></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="ultra whitetext">53+: ULTRA!!! <span>#Pen+1 & +1 extra injury, -10 trauma</span></h3>
+        </div>
+        <br>
+        <br>
+        <div class="explainer">
+            <span><b>Show trauma information: </b></span><input class="showtrauma" type="checkbox" name="showtrauma" value="1" chacked="true"/>
+                <div class="traumainfo">
+                    <br>
+                    <h4 class="whitetext">Explanation</h4>
+                        <p><b>W</b> = Wounded</p>
+                        <p><b>BH</b> = Badly healed</p>
+                        <p><b>A</b> = Augment</p>
+                        <br>
+                </div>
+                <div class="traumainfo">
+                    <h5 class="whitetext">Properties</h5>
+                        <p class="traumainfotext"><b>#12h =</b>
+                            <span>A less serious complication that corresponds with infections, blood clots, or deterioriating organ values. Select complication #12h. The complication can self-heal, but emergency healthcare is recommended.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#1h =</b>
+                            <span>Blood leaks out through the clothes in a bad way, you have failing organ values or an internal bleeding. Select complication #1h. This complication requires emergency healthcare.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#10min =</b>
+                            <span>You have severe internal bleeding, leak blood at a very unhealthy rate or have trouble breathing. Select complication #10min. The complication can be alleviated with #Bloodstop but requires emergency care.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#1r =</b>
+                            <span>One of your main arteries is open and now blood sprays around you. GLHF! Select complication #1r. Try not to soak your employers furniture with blood, it was probably expensive. #1r can be alleaviated with #Bloodstop but requires immediate emergency care.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Pain =</b>
+                            <span>A sharp pain that adrenaline can't counteract. Mark neuro-condition #Pain.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Fuckedup =</b>
+                            <span>The injury causes you to fall to the ground, makes it hard to breathe, see or think straight. Mark all neuro up to and including #Fuckedup. Removed when the scene ends.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Knockedout =</b>
+                            <span>The mind gives up and you sink down in a stupor of unconsciousness. Mark all neuro up to and including #Knockedout. Removed when the scene ends.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Melted =</b>
+                            <span>You have received a permanent brain damage. That was dumb, but it could have gone worse. Mark all neuro up to and including #Melted and choose a brain trauma. See the rules on neuro.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Lethal =</b>
+                            <span>If you roll #Failed on the shock roll from this injury then it is BB Habibi, you die instantly. Mark all the shock up to and including death as well as the corresponding neuro.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Fubar =</b>
+                            <span>You have lost an entire body part, such as the right arm. It is shot apart, hanging in bits, been crushed or is in one way or another beyond saving. Mark all damages on this body part and note all the corresponding trauma. After emergency care all the boxes for the body part is marked as badly heaeled, even if the emergency care roll succeeded. This is the case until you are able to get a replacement limb.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#Handicapped =</b>
+                            <span>One or more of your body parts was on the losing side in a dispute with a baton, dum-dum-ball or frag grenade. Even if you are able to cream the pain away it doesn't help - muscles and tendons are broken or severed and you receive -4 on all acttions that require that body part.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#NotBonga =</b>
+                            <span>That...that does not look good. Your face that is, that is not ok. Note #NotBonga among your Jenkem. This gives -4 on all social acttions where the body part is visible and you are not trying to threaten (or similar). #NotBonga does not stack.</span>
+                        </p>
+                        <p class="traumainfotext"><b>#OMG =</b>
+                            <span>The injury is not fun to look at and even worse to experience. Make a stress roll.</span>
+                        </p>
+
+                </div>
+        </div>
+    </div>
+<!--- Below this is the economy page --->
+    <div class="sheet-section-economy">
+        <br>
+        <div>
+            <div class="row">
+                <h2 class="economypage whitetext">Economy</h2>
+            </div>
+            <br>
+            <div>
+                <p>€: <input class="coin" type="text" name="attr_money"/>
+                    <span> Cash: <input class="coin" type="text" name="attr_cash"/></span>
+                    <span> Coin: <input class="coin" type="text" name="attr_coin"/></span>
+                    <span> Net income: <input class="totaleconomy" type="number" name="attr_netincome" value="(@{totalincome2} - @{totalexpense2})" disabled="true"/></span>
+                </p>
+            </div>
+        </div>
+        <br>
+        <span>Hide ledger: </span> 
+        <input class="sheet-badledger" type="checkbox"/>
+        <br>
+        <div class="hide-ledger incomeboxstart">
+            <div class="incomeboxstart2">
+                <h3 class="whitetext">Income</h3>
+            </div>
+            <div class="incomeboxstart2">
+                <h3 class="whitetext">Expenses</h3>
+            </div>
+            <div class="incomeboxstart2">
+                <h3 class="whitetext">Legal debt</h3>
+            </div>
+            <div class="incomeboxstart2">
+                <h3 class="whitetext">Illegal debt</h3>
+            </div>
+        </div>
+        <div class="hide-ledger flexcontainer2">
+<!--- income column below --->
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource1" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount1" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource2" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount2" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource3" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount3" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource4" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount4" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource5" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount5" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource6" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount6" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_incomesource7" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_incomeamount7" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+<!--- expense column below --->
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource1" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount1" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource2" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount2" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource3" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount3" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource4" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount4" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource5" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount5" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource6" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount6" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_expensesource7" value="Interest"/>
+                        <span><input class="incomeamount" type="number" name="attr_expenseamount7" value="((@{totalledebt2}/100)+(@{totalildebt2}/10))" disabled="true"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+<!--- legal debt column below --->
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource1" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount1" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource2" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount2" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource3" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount3" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource4" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount4" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource5" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount5" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource6" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount6" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ledebtsource7" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ledebtamount7" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+<!--- illegal column below --->
+        
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource1" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount1" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource2" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount2" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource3" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount3" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource4" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount4" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource5" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount5" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource6" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount6" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+            <div class="incomebox">
+                <div class="incomebox2">
+                    <br>
+                    <p><input class="incometextbox" type="text" name="attr_ildebtsource7" placeholder="Source"/>
+                        <span><input class="incomeamount" type="number" name="attr_ildebtamount7" value="0"/> <b>€</b></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+<!--- End of input boxes --->
+<!--- Below are the autocalculating boxes --->
+        <div class="hide-ledger flexcontainer">
+            <div class="incomebox3">
+                <br>
+                <p class="totalamounttext">  <b>Income:</b> <input class="totaleconomy" type="number" name="attr_totalincome2" value="(@{incomeamount1} + @{incomeamount2} + @{incomeamount3} + @{incomeamount4} + @{incomeamount5} + @{incomeamount6} + @{incomeamount7})" disabled="true"/> <b>€</b></p>
+            </div>
+            <div class="incomebox3">
+                <br>
+                <p class="totalamounttext"> <b>Expenses:</b> <input class="totaleconomy" type="number" name="attr_totalexpense2" value="(@{expenseamount1} + @{expenseamount2} + @{expenseamount3} + @{expenseamount4} + @{expenseamount5} + @{expenseamount6} + @{expenseamount7})" disabled="true"/> <b>€</b></p>
+            </div>
+            <div class="incomebox3">
+                <br>
+                <p class="totalamounttext">  <b>Legal debt:</b> <input class="totaleconomy" type="number" name="attr_totalledebt2" value="(@{ledebtamount1} + @{ledebtamount2} + @{ledebtamount3} + @{ledebtamount4} + @{ledebtamount5} + @{ledebtamount6} + @{ledebtamount7})" disabled="true"/> <b>€</b></p>
+            </div>
+            <div class="incomebox3">
+                <br>
+                <p class="totalamounttext">  <b>Illegal debt:</b> <input class="totaleconomy" type="number" name="attr_totalildebt2" value="(@{ildebtamount1} + @{ildebtamount2} + @{ildebtamount3} + @{ildebtamount4} + @{ildebtamount5} + @{ildebtamount6} + @{ildebtamount7})" disabled="true"/> <b>€</b></p>
+            </div>
+        </div>
+        <br>
+<!--- End of the autocalculating boxes & beginning of downtime --->
+        <div class="economypage">
+            <div class="row">
+                <h2 class="whitetext">Downtime</h2>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <h3 class="whitetext">Activity</h3>
+            </div>
+            <div class="downtime2">
+                <h3 class="whitetext">Gainz</h3>
+            </div>
+            <div class="downtime3">
+                <h3 class="whitetext">Misc</h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>SlipaEdge </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_gainzedge" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{gainzedge}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscedge"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>OptaAttribut </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_optatr" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{optatr}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscoptatr"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>Work </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_workdowntime" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{workdowntime}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscwork"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>Chill </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_downchill" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{downchill}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscchill"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>Network </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_downnetwork" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{downnetwork}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscnetwork"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <p>Prep </p>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_downprep" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{downprep}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscprep"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <input class="bonusactivity" type="text" name="attr_bonusactivitiy1"/>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_bonusact1" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{bonusact1}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscbonus1"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <input class="bonusactivity" type="text" name="attr_bonusactivitiy2"/>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_bonusact2" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{bonusact2}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscbonus2"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <input class="bonusactivity" type="text" name="attr_bonusactivitiy3"/>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_bonusact3" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{bonusact3}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscbonus3"/></h3>
+            </div>
+        </div>
+        <div class="flexcontainer4">
+            <div class="downtime1">
+                <input class="bonusactivity" type="text" name="attr_bonusactivitiy4"/>
+            </div>
+            <div class="downtime2">
+                <span><input class="ammo" type="number" name="attr_bonusact4" value="0"/><button type="roll" value="/roll 2d10! + ?{Modifier|0} + (@{bonusact4}*2)"/></span>
+            </div>
+            <div class="downtime3">
+                <h3><input type="text" name="attr_miscbonus4"/></h3>
+            </div>
+        </div>
+        
+<!---
+ class="flexcontainer3"
+        <div class="networkbox">
+            <fieldset class="repeating_network">
+                <div class="networkbox2">
+                    <p><input class="network" type="text" name="attr_contactname"/></p>
+                </div>
+            </fieldset>
+        </div>
+        <div class="networkbox">
+            <fieldset class="repeating_network">
+                <div class="networkbox2">
+                    <p><input class="network" type="text" name="attr_domainname"/></p>
+                </div>
+            </fieldset>
+        </div>
+        <div class="networkbox">
+            <fieldset class="repeating_network">
+                <div class="networkbox2">
+                    <select class="network">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+        <div class="networkbox">
+            <fieldset class="repeating_network">
+                <div class="networkbox2">
+                    <select class="network">
+                        <option>OK</option>
+                        <option>Used</option>
+                        <option>Abused</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+        --->
+
+        
+    </div>
+    <div class="sheet-section-allrolls">
+        <br>
+        <br>
+            <div class="3colrow">
+                <div class="col">
+                    <h3 class="whitetext">Combat</h3>
+                    <p>Initiative: 
+                        <input class="combattext" type="number" name="attr_initiative"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{initiative} + ?{Modifier|0} + @{rollmodifier}" name="roll_initiative"></button> 
+                    </p>
+                    <p>Melee attack: 
+                        <input class="combattext" type="number" name="attr_melee-attack"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{melee-attack} + ?{Modifier|0} + @{rollmodifier}" name="roll_melee"></button> 
+                    </p>
+                    <p>Ranged attack: 
+                        <input class="combattext" type="number" name="attr_ranged-attack"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{ranged-attack} + ?{Modifier|0} + @{rollmodifier}" name="roll_ranged"></button> 
+                    </p>
+                    <p>Melee defense: 
+                        <input class="combattext" type="number" name="attr_melee-defense"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{melee-defense} + ?{Modifier|0} + @{rollmodifier}" name="roll_melee-defense"></button> 
+                    </p>
+                    <p>Ranged defense: 
+                        <input class="combattext" type="number" name="attr_ranged-defense"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{ranged-defense} + ?{Modifier|0} + @{rollmodifier}" name="roll_ranged-defense"></button> 
+                    </p>
+                    <p>Adrenaline: 
+                        <input class="combattext" type="number" name="attr_shock"/> 
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{shock} + ?{Modifier|0}" name="roll_shock"></button> 
+                    </p>
+                    <br>
+                    <h3 class="whitetext">Misc</h3>
+                    <p class="misc">Tripp: 
+                        <input class="combattext" type="number" name="attr_tripp"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{tripp} + ?{Modifier|0}" name="roll_tripp"></button>
+                    </p>
+                    <p class="misc">Status: 
+                        <input class="combattext" type="number" name="attr_status"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{status} + ?{Modifier|0}" name="roll_status"></button>
+                    </p>
+                    <p class="misc">Nätvaro: 
+                        <input class="combattext" type="number" name="attr_nätvaro"/>
+                        <button class="combatbutton" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{nätvaro} + ?{Modifier|0}" name="roll_nätvaro"></button>
+                    </p>
+                    <p class="misc">Sens: 
+                        <input class="combattext" type="number" name="attr_sens"/>
+                    </p>
+                    <br>
+                </div>
+                <div class="col">
+                    <h3 class="whitetext">Flow</h3>
+                    <p>Flow: 
+                        <input class="flowbox" type="number" name="attr_flow" value="12" />
+                    </p>
+                    <p>Used: 
+                        <input class="flowbox" type="number" name="attr_used-flow" value="0"/>
+                    </p>
+                    <p>Stress: 
+                        <input class="flowbox" type="number" name="attr_stress" value="0"/>
+                    </p>
+                    <p>Desens: 
+                        <input class="flowbox" type="number" name="attr_desens" value="0"/>
+                    </p>
+                    <br>
+                    <p>Sign: 
+                        <input class="flowbox" type="number" name="attr_sign" value="0"/>
+                    </p>
+                    <br>
+                    <p>Global roll modifier <!--- This modifies all rolls except adrenaline. Useful for modifiers that affects a lot of rolls and last a long time, such as pain from shock.  --->
+                        <input type="number" name="attr_rollmodifier" value="0"/>
+                    </p>
+                </div>
+                <div class="col">
+                    <h3 class="whitetext">Attributes</h3>
+                    <p class="attribute2">Flex: 
+                        <input class="attribute" type="number" name="attr_flex"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{flex} + ?{Modifier|0} + @{rollmodifier}" name="roll_flex"></button>
+                    </p>
+                    <p class="attribute2">Sync: 
+                        <input class="attribute" type="number" name="attr_sync"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{sync} + ?{Modifier|0} + @{rollmodifier}" name="roll_sync"></button>
+                    </p>
+                    <p class="attribute2">Primal: 
+                        <input class="attribute" type="number" name="attr_primal"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{primal} + ?{Modifier|0} + @{rollmodifier}" name="roll_primal"></button>
+                    </p>
+                    <p class="attribute2">Avantgarde: 
+                        <input class="attribute" type="number" name="attr_avantgarde"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{avantgarde} + ?{Modifier|0} + @{rollmodifier}" name="roll_avantgarde"></button>
+                    </p>
+                    <p class="attribute2">Charisma: 
+                        <input class="attribute" type="number" name="attr_charisma"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{charisma} + ?{Modifier|0} + @{rollmodifier}" name="roll_charisma"></button>
+                    </p>
+                    <p class="attribute2">Instinct: 
+                        <input class="attribute" type="number" name="attr_instinct"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{instinct} + ?{Modifier|0} + @{rollmodifier}" name="instinct"></button>
+                    </p>
+                    <p class="attribute2">Cortex: 
+                        <input class="attribute" type="number" name="attr_cortex"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{cortex} + ?{Modifier|0} + @{rollmodifier}" name="cortex"></button>
+                    </p>
+                    <p class="attribute2">Tech: 
+                        <input class="attribute" type="number" name="attr_tech"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{tech} + ?{Modifier|0} + @{rollmodifier}" name="tech"></button>
+                    </p>
+                    <p class="attribute2">System: 
+                        <input class="attribute" type="number" name="attr_system"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{system} + ?{Modifier|0} + @{rollmodifier}" name="system"></button>
+                    </p>
+                    <p class="attribute2">Hardcore: 
+                        <input class="attribute" type="number" name="attr_hardcore"/>
+                        <button class="attributeroll" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{hardcore} + ?{Modifier|0} + @{rollmodifier}" name="hardcore"></button>
+                    </p>
+                </div>
+            </div>
+        <div>
+            <br>
+            <h3 class="whitetext">Weapons</h3>
+                <fieldset class="repeating_weapons">
+                    <br>
+                    <div class="repeating-weapons">
+                    <p>Name: <input class="weaponname" type="text" name="attr_weapon-name"/><span> Attack: <input class="ammo" type="number" name="attr_charattack"/><button type="roll" value="/roll {2d10! + ?{Flow|0}d10}kh2 + @{charattack} + ?{Modifier|0} + @{rollmodifier}" name="roll_repeatingdamage"></button> </span><span> Auto: <input class="ammo" type="number" name="attr_weapon-auto"/></span> <span>Damage: <input class="textbox" type="text" name="attr_weapon-damage"/><button type="roll" value="/roll @{weapon-damage} + ?{Modifier|0}" name="roll_repeatingdamage"></button></span><span> Penetration: <input class="ammo" type="number" name="attr_weapon-pen"/></span></p>
+                    <p>Ammo: <input class="ammo" type="number" name="attr_weapon-ammo"/><span>/ <input class="ammo" type="number" name="attr_weapon-ammototal"/></span><span> <span> Carried: <input class="ammo" type="number" name="attr_weaponloaded"/></span><span> Owned: <input class="ammo" type="number" name="attr_weaponcarried"/></span><span> Calibre: <input class="textbox" type="text" name="attr_weapon-calibre"/></span><span> Quality: <input class="textbox" type="text" name="attr_weapon-quality"/></span><span> Sign: <input class="ammo" type="number" name="attr_weapon-sign"/></span></p>
+                    <p>Properties: <input class="weaponpropertybox" type="text" name="attr_weapon-property"/></p>
+                    <br>
+                    </div>
+                </fieldset>
+        </div>
+    </div>
+    <!--- 
+    <div clas="testbutton">
+        <button class="testbutton1" type="roll" value="/roll {2d10 + ?{Flow|0}d10}kh2 + @{hardcore} + ?{Modifier|0} + @{rollmodifier}" name="testbutton"></button>
+    </div>
+    --->
+</div>
+
+	    <div>
+	        <h3 class="whitetext">Nexus Notes</h3>
+	        <p><textarea class="notesarea" name="attr_notesarea"></textarea></p>
+	    </div>
+
